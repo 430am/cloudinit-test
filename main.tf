@@ -47,8 +47,8 @@ resource "azurerm_bastion_host" "test-bastion" {
     location = var.location
     name = "bastion-test"
     resource_group_name = azurerm_resource_group.test-rg.name
-    dns_name = "bastion-test"
     tunneling_enabled = true
+    sku = "Standard"
 
     ip_configuration {
         name = "bastion-ip-config"

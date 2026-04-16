@@ -113,4 +113,6 @@ resource "azurerm_linux_virtual_machine" "test-vm" {
         username = "ladmin"
         public_key = azapi_resource_action.ssh_public_key_gen.output.publicKey
     }
+
+    custom_data = base64encode(file("${path.module}/scripts/ms-apt-repo.yaml"))
 }
